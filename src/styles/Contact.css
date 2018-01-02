@@ -1,0 +1,24 @@
+.contact {
+  display: flex;
+  flex-direction: row;
+  font-size: 50px;
+  height: 100px;
+  padding: 10px 80px;
+}
+
+.contact-thumbnail {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+  border: 2px solid #463630;
+}
+
+.contact-name {
+  margin-left: 30px;
+  display: inline-block;
+}
+
+.contact:hover {
+  background-color: #896536;
+  color: white;
+}

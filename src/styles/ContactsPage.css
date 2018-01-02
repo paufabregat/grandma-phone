@@ -1,0 +1,19 @@
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-list-header {
+  font-size: 70px;
+  background-color: #4A4A4A;
+  padding: 30px 80px;
+  height: 120px;
+  color: white;
+}
+
+.call-to {
+  font-size: 50px;
+  height: 80px;
+  padding: 20px 80px;
+}
