@@ -15,10 +15,13 @@
 
 .contact-name {
   margin-left: 30px;
-  display: inline-block;
 }
 
 .contact:hover {
   background-color: #896536;
   color: white;
+}
+
+a:visited {
+  color: black;
 }
