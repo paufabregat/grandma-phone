@@ -1,24 +1,44 @@
-.App {
-  text-align: center;
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.contact-list-header {
+  font-size: 70px;
+  background-color: #4A4A4A;
+  padding: 30px 80px;
+  height: 120px;
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+.call-to {
+  font-size: 50px;
+  height: 80px;
+  padding: 20px 80px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.contact {
+  display: flex;
+  flex-direction: row;
+  font-size: 50px;
+  height: 100px;
+  padding: 10px 80px;
+}
+
+.contact-thumbnail {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #463630;
+}
+
+.contact-name {
+  margin-left: 30px;
+  display: inline-block;
+}
+
+.contact:hover {
+  background-color: #896536;
+  color: white;
 }

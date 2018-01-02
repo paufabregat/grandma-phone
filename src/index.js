@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './App';
+import App from './components/App';
 import './styles/index.css';
 
 render(
@@ -9,9 +9,9 @@ render(
 );
 
 if (module.hot) {
-    module.hot.accept('./App', () => {
+    module.hot.accept('./components/App', () => {
         // eslint-disable-next-line global-require
-        const NextApp = require('./App').default;
+        const NextApp = require('./components/App').default;
         render(
             <NextApp />,
             document.getElementById('root')
