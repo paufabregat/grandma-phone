@@ -5,7 +5,7 @@ export default function ({ contact }) {
         background: `url(${contact.image_path}) no-repeat center/cover`
     };
     return (
-        <div className="contact" key={contact.id}>
+        <div className="contact">
             <div className="contact-thumbnail" style={imgStyle} />
             <div className="contact-name vertical-align"> {contact.name} </div>
         </div>

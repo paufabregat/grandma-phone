@@ -1,19 +1,19 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App';
+import Routes from './routes';
 import './styles/index.css';
 
 render(
-    <App />,
+    <Routes />,
     document.getElementById('root')
 );
 
 if (module.hot) {
-    module.hot.accept('./components/App', () => {
+    module.hot.accept('./routes', () => {
         // eslint-disable-next-line global-require
-        const NextApp = require('./components/App').default;
+        const NextRoutes = require('./routes').default;
         render(
-            <NextApp />,
+            <NextRoutes />,
             document.getElementById('root')
         );
     });
