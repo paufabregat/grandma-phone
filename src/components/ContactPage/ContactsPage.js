@@ -1,7 +1,7 @@
 import React from 'react';
-import fakeContact from '../helpers/data/fakeContacts';
+import fakeContact from '../../helpers/data/fakeContacts';
 import Contact from './Contact';
-import '../styles/ContactsPage.css';
+import '../../styles/ContactsPage.css';
 
 export default function () {
     const contactList = fakeContact.map(contact => (
