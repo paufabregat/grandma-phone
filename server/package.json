@@ -1,0 +1,15 @@
+{
+  "name": "On device helper server",
+  "version": "1.0.0",
+  "description": "Read MQQT intents from SNIPS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": "pau.fabregat.p@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "mqtt": "^2.15.0",
+    "socket.io": "^2.0.4"
+  }
+}
