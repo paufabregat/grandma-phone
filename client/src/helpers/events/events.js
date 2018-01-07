@@ -7,13 +7,22 @@ function callContact(cb) {
     socket.on(events.callContact, (event) => {
         const eventParser = new EventParser(event);
         const slots = eventParser.getSlots();
+        const sessionId = eventParser.getSessionId();
         const contact = EventParser.getSlotValue(slots[0]);
-        return cb(null, contact);
+        return cb(null, contact, sessionId);
     });
+}
+
+function sendText(sessionId, text, event) {
+    const payload = {
+        sessionId,
+        text
+    };
+    socket.emit(event, payload);
 }
 
 function stopCall(cb) {
     socket.on(events.stopCall, () => cb(null));
 }
 
-export { callContact, stopCall };
+export { callContact, stopCall, sendText };
