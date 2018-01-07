@@ -6,13 +6,12 @@ const c = require('./constants');
 const deviceHost = '192.168.1.37'
 const mqqtClient  = mqtt.connect(`mqtt://${deviceHost}`);
 
-// Enforced Snips TCP MQTT connection
+// TCP MQTT connection - only option on SNIPS side for now
 mqqtClient.on('connect', function () {
   console.log('Connected to MQTT broker');
-  // TODO iterate over queues to subscribe
   c.intentNames.forEach(intentName => {
-      console.log(`Subscribe to MQTT ${c.queueName}${intentName}`);
-      mqqtClient.subscribe(`${c.queueName}${intentName}`);
+      console.log(`Subscribe to MQTT ${c.intentQueue}${intentName}`);
+      mqqtClient.subscribe(`${c.intentQueue}${intentName}`);
   })
 })
 
@@ -23,10 +22,21 @@ mqqtClient.on('message', (topic, message) => {
   io.sockets.emit(intentName, message.toString());
 });
 
-// Socket IO to reach web app
 const port = 8000;
 io.on('connection', (client) => {
   console.log(`Client ${client.id} connected`);
+
+  client.on(c.dialogueQueues.end, payload => {
+    console.log('Sending text to the end session queue');
+    const endQueue = `${c.dialogueManagerQueue}${c.dialogueQueues.end}`;
+    mqqtClient.publish(endQueue, JSON.stringify(payload));
+  })
+
+  client.on(c.dialogueQueues.continue, payload => {
+    console.log('Sending text to the continue session queue');
+    const continueQueue = `${c.dialogueManagerQueue}${c.dialogueQueues.continue}`;
+    mqqtClient.publish(continueQueue, JSON.stringify(payload));
+  })
 });
 
 io.listen(port);
