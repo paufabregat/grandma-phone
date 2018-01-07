@@ -23,7 +23,6 @@ class CallingPage extends Component {
             timerId: null,
             userImg
         };
-
         stopCall(() => {
             this.props.history.push('/');
         });
@@ -57,13 +56,16 @@ class CallingPage extends Component {
     }
 
     loopTone() {
+        tone.addEventListener('play', () => {
+            this.changeWrapThumbColor();
+        });
+        tone.addEventListener('pause', function onPauseAudio() {
+            this.currentTime = 0;
+        });
         tone.addEventListener('ended', function resetAudio() {
             this.currentTime = 0;
             this.play();
         }, false);
-        tone.addEventListener('play', () => {
-            this.changeWrapThumbColor();
-        });
         tone.play();
     }
 
