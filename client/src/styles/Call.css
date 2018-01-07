@@ -1,0 +1,42 @@
+.call-screen {
+
+}
+
+.video-stream {
+}
+
+#localVideo {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 50px;
+  top: 10px;
+}
+
+#remoteVideo {
+  position:fixed;
+  object-fit:cover;
+  object-position: 50% 50%;
+  height:100%;
+  width:100%;
+}
+
+.hang-up {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 170px;
+  bottom: 20px;
+
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+.hang-up > img {
+
+  width: 100px;
+}

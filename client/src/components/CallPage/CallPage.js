@@ -1,77 +1,52 @@
+/* eslint jsx-a11y/media-has-caption: 0 */
 import React, { Component } from 'react';
-import Calling from './Calling';
-import fakeContact from '../../helpers/data/fakeContacts';
-import '../../styles/CallPage.css';
+import { withRouter } from 'react-router-dom';
+import Call from './Call';
 
-const tone = new Audio('/assets/one-call-tone.mp3');
+import '../../styles/Call.css';
+import '../../../node_modules/webrtc-adapter';
+
 class CallPage extends Component {
     constructor(props) {
         super(props);
-        // eslint-disable-next-line
-        const userName = props.match.params.name;
-        let userImg = null; // TODO may be add redux and put it in the state
-        fakeContact.forEach((contact) => {
-            if (userName === contact.name) {
-                userImg = contact.image_path;
-            }
-        });
-        this.state = {
-            isConnectionStablished: false,
-            callThumbColor: '#4A4A4A',
-            timerId: null,
-            userImg
-        };
+        this.state = {};
     }
 
     componentDidMount() {
-        this.loopTone();
+        navigator.mediaDevices.getUserMedia({
+            audio: true,
+            video: true
+        })
+            .then(this.gotStream);
     }
 
-    componentWillUnmount() {
-        tone.pause();
-        clearTimeout(this.timerId);
+    onHangUp = () => {
+        this.props.history.push('/');
     }
 
-    changeScreen() {
-        setTimeout(() =>
-            this.setState({
-                isConnectionStablished: true
-            }), 10000);
+    setLVideoRef = (ref) => {
+        this.localVideo = ref;
     }
 
-    changeWrapThumbColor() {
-        const timerId = setTimeout(() =>
-            this.setState({
-                callThumbColor: 'rgba(74, 74, 74, 0.67)'
-            }), 3300);
-        this.setState({
-            callThumbColor: '#4A4A4A',
-            timerId
-        });
+    setRVideoRef = (ref) => {
+        this.remoteVideo = ref;
     }
 
-    loopTone() {
-        tone.addEventListener('ended', function resetAudio() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-        tone.addEventListener('play', () => {
-            this.changeWrapThumbColor();
-        });
-        tone.play();
+    gotStream = (stream) => {
+        this.localVideo.srcObject = stream;
+        this.remoteVideo.srcObject = stream;
     }
+
 
     render() {
-        const userName = this.props.match.params.name;
-        if (!this.state.isConnectionStablished) {
-            return (<Calling
-                userName={userName}
-                userImg={this.state.userImg}
-                callThumbColor={this.state.callThumbColor}
-            />);
-        }
-        return null;
+        return (
+            <Call
+                setRVideoRef={this.setRVideoRef}
+                setLVideoRef={this.setLVideoRef}
+                onHangUp={this.onHangUp}
+            />
+        );
     }
 }
 
-export default CallPage;
+export default withRouter(CallPage);
