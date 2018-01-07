@@ -1,4 +1,7 @@
 const fakeEvent = {
+    sessionId: 'bcf84625-605f-4047-8eaa-0d909a64ce0e',
+    customData: null,
+    siteId: 'default',
     input: 'Call Pau',
     intent: {
         intentName: 'paupau:callContact',
