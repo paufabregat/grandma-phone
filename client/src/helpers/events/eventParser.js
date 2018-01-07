@@ -22,6 +22,10 @@ class EventParser {
     static getSlotRawValue(slot) {
         return slot.rawValue;
     }
+
+    static getSlotValue(slot) {
+        return slot.value.value;
+    }
 }
 
 export default EventParser;

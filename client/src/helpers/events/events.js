@@ -7,7 +7,7 @@ function callContact(cb) {
     socket.on(events.callContact, (event) => {
         const eventParser = new EventParser(event);
         const slots = eventParser.getSlots();
-        const contact = EventParser.getSlotRawValue(slots[0]);
+        const contact = EventParser.getSlotValue(slots[0]);
         return cb(null, contact);
     });
 }

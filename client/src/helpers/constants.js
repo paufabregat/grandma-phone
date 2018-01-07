@@ -5,5 +5,4 @@ const events = {
     stopCall: 'paupau:stopCall'
 };
 
-
 export { events };
