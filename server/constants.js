@@ -5,7 +5,17 @@ const intentNames = [
     'paupau:stopCall'
 ];
 
-const queueName = 'hermes/intent/';
+const dialogueQueues = {
+    continue: 'continueSession',
+    end: 'endSession',
+};
 
+const intentQueue = 'hermes/intent/';
+const dialogueManagerQueue = 'hermes/dialogueManager/';
 
-module.exports = { intentNames, queueName };
+module.exports = {
+  intentNames,
+  intentQueue,
+  dialogueQueues,
+  dialogueManagerQueue
+};
