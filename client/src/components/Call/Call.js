@@ -1,7 +1,6 @@
 /* eslint jsx-a11y/media-has-caption: 0 */
 import React from 'react';
 import hangUpLogo from './hangup.png';
-import '../../styles/Call.css';
 
 export default function ({ setRVideoRef, setLVideoRef, onHangUp }) {
     return (

@@ -4,14 +4,14 @@ import _ from 'lodash';
 import fakeContact from '../../helpers/data/fakeContacts';
 import Contact from './Contact';
 import { callContact, sendText } from '../../helpers/events/events';
-import '../../styles/ContactsPage.css';
+import '../../styles/ContactContainer.css';
 import {
     dialogueQueues,
     generateCallingMessage,
     generateNoContactMessage
 } from '../../helpers/constants';
 
-class ContactsPage extends Component {
+class ContactContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -60,4 +60,4 @@ class ContactsPage extends Component {
     }
 }
 
-export default withRouter(ContactsPage);
+export default withRouter(ContactContainer);

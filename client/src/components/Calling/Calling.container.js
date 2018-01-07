@@ -3,10 +3,10 @@ import { withRouter } from 'react-router-dom';
 import Calling from './Calling';
 import { stopCall } from '../../helpers/events/events';
 import fakeContact from '../../helpers/data/fakeContacts';
-import '../../styles/CallingPage.css';
+import '../../styles/CallingContainer.css';
 
 const tone = new Audio('/assets/one-call-tone.mp3');
-class CallingPage extends Component {
+class CallingContainer extends Component {
     constructor(props) {
         super(props);
         // eslint-disable-next-line
@@ -24,6 +24,7 @@ class CallingPage extends Component {
             userImg
         };
         stopCall(() => {
+            // eslint-disable-next-line
             this.props.history.push('/');
         });
     }
@@ -79,4 +80,4 @@ class CallingPage extends Component {
     }
 }
 
-export default withRouter(CallingPage);
+export default withRouter(CallingContainer);

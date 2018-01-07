@@ -7,7 +7,7 @@ import { stopCall } from '../../helpers/events/events';
 import '../../styles/Call.css';
 import '../../../node_modules/webrtc-adapter';
 
-class CallPage extends Component {
+class CallContainer extends Component {
     constructor(props) {
         super(props);
         stopCall(() => {
@@ -30,7 +30,7 @@ class CallPage extends Component {
     onHangUp = () => {
         this.stream.getVideoTracks()[0].stop();
         this.stream.getAudioTracks()[0].stop();
-
+        // eslint-disable-next-line
         setTimeout(() => this.props.history.push('/'), 1000);
     }
 
@@ -60,4 +60,4 @@ class CallPage extends Component {
     }
 }
 
-export default withRouter(CallPage);
+export default withRouter(CallContainer);
