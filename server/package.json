@@ -1,5 +1,5 @@
 {
-  "name": "On device helper server",
+  "name": "device-helper-server",
   "version": "1.0.0",
   "description": "Read MQQT intents from SNIPS",
   "main": "server.js",
