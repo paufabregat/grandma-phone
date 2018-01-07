@@ -1,8 +1,9 @@
+import config from '../../config';
 // SNIPS intent names
 const events = {
-    callContact: 'paupau:callContact',
-    contactOnLine: 'paupau:contactOnLine',
-    stopCall: 'paupau:stopCall'
+    callContact: config.events.callContact,
+    contactOnLine: config.events.contactOnLine,
+    stopCall: config.events.stopCall
 };
 
 const dialogueQueues = {
