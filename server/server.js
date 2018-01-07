@@ -1,9 +1,12 @@
 const io = require('socket.io')();
 const mqtt = require('mqtt');
 const c = require('./constants');
+const parseArgs = require('minimist')(process.argv.slice(2));
 
-// TODO change value depending on environment
-const deviceHost = '192.168.1.37'
+let deviceHost = 'localhost';
+if(parseArgs.piIp) {
+  deviceHost = parseArgs.piIp;
+}
 const mqqtClient  = mqtt.connect(`mqtt://${deviceHost}`);
 
 // TCP MQTT connection - only option on SNIPS side for now
