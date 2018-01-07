@@ -3,8 +3,13 @@ import { withRouter } from 'react-router-dom';
 import _ from 'lodash';
 import fakeContact from '../../helpers/data/fakeContacts';
 import Contact from './Contact';
-import { callContact } from '../../helpers/events/events';
+import { callContact, sendText } from '../../helpers/events/events';
 import '../../styles/ContactsPage.css';
+import {
+    dialogueQueues,
+    generateCallingMessage,
+    generateNoContactMessage
+} from '../../helpers/constants';
 
 class ContactsPage extends Component {
     constructor(props) {
@@ -12,14 +17,18 @@ class ContactsPage extends Component {
         this.state = {
             contactSelected: null
         };
-        callContact((err, contact) => {
+        callContact((err, contact, sessionId) => {
             const isContact = fakeContact.some(fkcontact => contact === fkcontact.name);
             if (isContact) {
                 this.setState({ contactSelected: contact });
+                sendText(sessionId, generateCallingMessage(contact), dialogueQueues.end);
                 // redirect to calling screen
                 setTimeout(() =>
                     this.props.history.push(`/calling/${contact}`)
                     , 3000);
+            } else {
+                console.log('Contact not found');
+                sendText(sessionId, generateNoContactMessage(), dialogueQueues.continue);
             }
         });
     }
