@@ -18,7 +18,7 @@ class ContactsPage extends Component {
                 this.setState({ contactSelected: contact });
                 // redirect to calling screen
                 setTimeout(() =>
-                    this.props.history.push(`/call/${contact}`)
+                    this.props.history.push(`/calling/${contact}`)
                     , 3000);
             }
         });

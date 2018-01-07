@@ -1,8 +1,8 @@
-.call {
+.calling-screen {
   align-items: center;
 }
 
-.wrap-call-thumb {
+.wrap-calling-thumb {
   align-items: center;
   width: 550px;
   height: 550px;
@@ -10,13 +10,13 @@
   margin-top: 20px;
 }
 
-.call-thumb {
+.calling-thumb {
   width: 400px;
   height: 400px;
   border-radius: 50%;
 }
 
-.message {
+.calling-message {
   margin-top: 30px;
   font-size: 60px;
 }

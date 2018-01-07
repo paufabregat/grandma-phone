@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/Contact.css';
 
 export default function ({ userName, userImg, callThumbColor }) {
     const imgStyle = {
@@ -9,11 +8,11 @@ export default function ({ userName, userImg, callThumbColor }) {
         backgroundColor: callThumbColor
     };
     return (
-        <div className="call vertical-align" >
-            <div className="wrap-call-thumb vertical-align" style={wrapCallThumbStyle} >
-                <div className="call-thumb" style={imgStyle} />
+        <div className="calling-screen vertical-align" >
+            <div className="wrap-calling-thumb vertical-align" style={wrapCallThumbStyle} >
+                <div className="calling-thumb" style={imgStyle} />
             </div>
-            <div className="message">
+            <div className="calling-message">
                 {`Calling ${userName}. Please wait`}
             </div>
         </div>
