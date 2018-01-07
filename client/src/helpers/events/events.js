@@ -1,10 +1,10 @@
 import openSocket from 'socket.io-client';
 import EventParser from './eventParser';
-import { events } from '../constants';
+import { intents } from '../constants';
 
 const socket = openSocket('http://localhost:8000');
 function callContact(cb) {
-    socket.on(events.callContact, (event) => {
+    socket.on(intents.callContact, (event) => {
         const eventParser = new EventParser(event);
         const slots = eventParser.getSlots();
         const sessionId = eventParser.getSessionId();
@@ -22,7 +22,7 @@ function sendText(sessionId, text, event) {
 }
 
 function stopCall(cb) {
-    socket.on(events.stopCall, () => cb(null));
+    socket.on(intents.stopCall, () => cb(null));
 }
 
 export { callContact, stopCall, sendText };

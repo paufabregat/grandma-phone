@@ -1,9 +1,9 @@
-import config from '../../config';
+import config from '../config';
 // SNIPS intent names
-const events = {
-    callContact: config.events.callContact,
-    contactOnLine: config.events.contactOnLine,
-    stopCall: config.events.stopCall
+const intents = {
+    callContact: config.intents.callContact,
+    contactOnLine: config.intents.contactOnLine,
+    stopCall: config.intents.stopCall
 };
 
 const dialogueQueues = {
@@ -19,7 +19,7 @@ const generateNoContactMessage = () =>
 
 
 export {
-    events,
+    intents,
     dialogueQueues,
     generateCallingMessage,
     generateNoContactMessage
