@@ -3,6 +3,10 @@ class EventParser {
         this.event = JSON.parse(event);
     }
 
+    getSessionId() {
+        return this.event.sessionId;
+    }
+
     getInput() {
         return this.event.input;
     }
