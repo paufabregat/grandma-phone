@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../../styles/Contact.css';
 
-export default function ({ contact, selected }) {
+const Contact = ({ contact, selected }) => {
     const contactStyle = {};
     const imgStyle = {
         background: `url(${contact.image_path}) no-repeat center/cover`
@@ -19,4 +20,15 @@ export default function ({ contact, selected }) {
             </div>
         </Link>
     );
-}
+};
+
+Contact.propTypes = {
+    contact: PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+        image_path: PropTypes.string
+    }).isRequired,
+    selected: PropTypes.bool.isRequired
+};
+
+export default Contact;

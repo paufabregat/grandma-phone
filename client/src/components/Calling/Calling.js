@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function ({ userName, userImg, callThumbColor }) {
+const Calling = ({ userName, userImg, callThumbColor }) => {
     const imgStyle = {
         background: `url(${userImg}) no-repeat center/cover`
     };
@@ -17,4 +18,12 @@ export default function ({ userName, userImg, callThumbColor }) {
             </div>
         </div>
     );
-}
+};
+
+Calling.propTypes = {
+    userName: PropTypes.string.isRequired,
+    userImg: PropTypes.string.isRequired,
+    callThumbColor: PropTypes.string.isRequired
+};
+
+export default Calling;
