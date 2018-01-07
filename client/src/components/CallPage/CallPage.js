@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Call from './Call';
+import { stopCall } from '../../helpers/events/events';
 
 import '../../styles/Call.css';
 import '../../../node_modules/webrtc-adapter';
@@ -9,7 +10,9 @@ import '../../../node_modules/webrtc-adapter';
 class CallPage extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        stopCall(() => {
+            this.onHangUp();
+        });
     }
 
     componentDidMount() {
@@ -20,8 +23,15 @@ class CallPage extends Component {
             .then(this.gotStream);
     }
 
+    componentWillUnmount() {
+        this.onHangUp();
+    }
+
     onHangUp = () => {
-        this.props.history.push('/');
+        this.stream.getVideoTracks()[0].stop();
+        this.stream.getAudioTracks()[0].stop();
+
+        setTimeout(() => this.props.history.push('/'), 1000);
     }
 
     setLVideoRef = (ref) => {
@@ -33,6 +43,7 @@ class CallPage extends Component {
     }
 
     gotStream = (stream) => {
+        this.stream = stream;
         this.localVideo.srcObject = stream;
         this.remoteVideo.srcObject = stream;
     }

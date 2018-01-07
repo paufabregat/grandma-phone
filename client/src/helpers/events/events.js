@@ -12,4 +12,8 @@ function callContact(cb) {
     });
 }
 
-export { callContact };
+function stopCall(cb) {
+    socket.on(events.stopCall, () => cb(null));
+}
+
+export { callContact, stopCall };

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Calling from './Calling';
+import { stopCall } from '../../helpers/events/events';
 import fakeContact from '../../helpers/data/fakeContacts';
 import '../../styles/CallingPage.css';
 
@@ -22,6 +23,10 @@ class CallingPage extends Component {
             timerId: null,
             userImg
         };
+
+        stopCall(() => {
+            this.props.history.push('/');
+        });
     }
 
     componentDidMount() {
