@@ -1,24 +1,7 @@
 {
-  "name": "electron-with-create-react-app",
+  "name": "grandma-phone-ui",
   "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "electron": "^1.7.9",
-    "eslint-config-airbnb": "^15.1.0",
-    "foreman": "^2.0.0",
-    "react-hot-loader": "^3.1.3",
-    "react-scripts": "0.8.5"
-  },
-  "dependencies": {
-    "lodash": "^4.17.4",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17",
-    "socket.io-client": "^2.0.4",
-    "webrtc-adapter": "^6.0.4"
-  },
-  "homepage": "./",
+  "description": "UI to enable voice-assisted videocalls for seniors",
   "main": "src/helpers/electron-starter.js",
   "scripts": {
     "start": "nf start -p 3000",
@@ -28,5 +11,25 @@
     "electron": "electron .",
     "electron-start": "node src/helpers/electron-wait-react",
     "react-start": "react-scripts start"
-  }
+  },
+  "author": "pau.fabregat.p@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "eslint-config-airbnb": "^15.1.0",
+    "foreman": "^2.0.0",
+    "react-hot-loader": "^3.1.3",
+    "react-scripts": "0.8.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "socket.io-client": "^2.0.4",
+    "webrtc-adapter": "^6.0.4"
+  },
+  "homepage": "./"
 }
