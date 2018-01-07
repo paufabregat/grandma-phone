@@ -1,7 +1,8 @@
 {
   "name": "device-helper-server",
   "version": "1.0.0",
-  "description": "Read MQQT intents from SNIPS",
+  "description": "Helper server to subscribe/publish to SNIPS MQTT server
+                  throught websockets",
   "main": "server.js",
   "scripts": {
     "start": "node server"
