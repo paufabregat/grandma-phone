@@ -12,7 +12,7 @@ export default function ({ contact, selected }) {
         contactStyle.color = 'white';
     }
     return (
-        <Link to={`/call/${contact.name}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/calling/${contact.name}`} style={{ textDecoration: 'none' }}>
             <div className="contact" style={contactStyle}>
                 <div className="contact-thumbnail" style={imgStyle} />
                 <div className="contact-name vertical-align"> {contact.name} </div>
