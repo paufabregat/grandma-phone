@@ -23,9 +23,10 @@ class ContactContainer extends Component {
                 this.setState({ contactSelected: contact });
                 sendText(sessionId, generateCallingMessage(contact), dialogueQueues.end);
                 // redirect to calling screen
-                setTimeout(() =>
+                setTimeout(() => {
+                    // eslint-disabe-next-line react/prop-types
                     this.props.history.push(`/calling/${contact}`)
-                    , 3000);
+                }, 3000);
             } else {
                 console.log('Contact not found');
                 sendText(sessionId, generateNoContactMessage(), dialogueQueues.continue);
