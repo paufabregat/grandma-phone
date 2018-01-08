@@ -31,6 +31,7 @@ class CallingContainer extends Component {
 
     componentDidMount() {
         this.loopTone();
+        this.changeScreen();
     }
 
     componentWillUnmount() {
