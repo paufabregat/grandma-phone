@@ -1,8 +1,7 @@
 {
-  "name": "device-helper-server",
+  "name": "helper-websocket-server",
   "version": "1.0.0",
-  "description": "Helper server to subscribe/publish to SNIPS MQTT server
-                  throught websockets",
+  "description": "Helper websocket server used as middleware in between SNIPS MQTT server and the client",
   "main": "server.js",
   "scripts": {
     "start": "node server"
