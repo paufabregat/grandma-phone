@@ -16,7 +16,7 @@ git clone https://github.com/paufabregat/grandma-phone
 cd grandma-phone/server
 ~~~
 
-Next, install all the dependencies.
+You will need the node version >= 6 to run the app. Next, install all the dependencies.
 ~~~
 npm install
 ~~~
