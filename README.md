@@ -20,6 +20,7 @@ Briefly there are main 3 components:
 Please, take a look at the [client](), [server](), and [assistant]() folder to know how to setup the project. The recommended order is to start by the assistant, followed by the server and finish with the client.  
 
 ## Road Map
+- Core functionalities tests
 - TV remote control navigation
 - Back-end:
   - Authentication
@@ -27,3 +28,6 @@ Please, take a look at the [client](), [server](), and [assistant]() folder to k
   - Signaling
 - Receive call
 - Handle errors and problematic interactions
+
+## License
+MIT
