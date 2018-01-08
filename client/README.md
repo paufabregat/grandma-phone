@@ -21,8 +21,13 @@ Run the app and see it popping at `localhost:3000` and in the electron environme
 npm start
 ~~~
 
+As both the react app and the electron app run in parallel, you may encounter that TTS messages are being duplicated as both apps are publishing to the same queue. If you are developing and testing the functionality you may want to just run the react app like so:
+~~~
+npm run react-start
+~~~
+
 ## Config file
-Right now the config file enables developers to use a different voice-assistant instead of the one provided in the repository. The developer would create a new assitant using the [SNIPS console](https://console.snips.ai) and replace the personal intent names set in the config file by the ones he/she created.
+Right now the config file enables developers to use a different voice-assistant instead of the one provided in the repository. The developer would create a new assistant using the [SNIPS console](https://console.snips.ai) and replace the personal intent names set in the config file by the ones he/she created.
 This is interesting if you want to create an assistant that is trained with more and/or different names and create different sentences to trigger the action and/or trigger it in a different language rather than English.
 To be clear, let's see an example: let's say you created an assistant and you created an intent for the `callContact` action called `robert:callVIPContacts`. It would look like inside the intents object in the config file:
 
