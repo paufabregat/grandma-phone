@@ -38,4 +38,4 @@ callContact: 'robert:callVIPContact',
 ## Electron
 [Electron](https://electronjs.org/) enables developers to create cross-platform desktop apps using HTML, CSS and JS.
 
-The app in this repo is intended to run in a RaspberryPi with a Raspbian distribution as an Electron app. [This bootstrap project](https://github.com/csepulv/electron-with-create-react-app) was used to enable working side by side with create-react-app and Electron without the need to eject the react app. If you want to learn more about it, please follow [this link](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c)
+The app in this repo is intended to run in a Raspberry Pi with a Raspbian distribution as an Electron app. [This bootstrap project](https://github.com/csepulv/electron-with-create-react-app) was used to enable working side by side with create-react-app and Electron without the need to eject the react app. If you want to learn more about it, please follow [this link](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c)
