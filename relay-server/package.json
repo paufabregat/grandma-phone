@@ -1,7 +1,7 @@
 {
-  "name": "helper-websocket-server",
+  "name": "relay-websocket-server",
   "version": "1.0.0",
-  "description": "Helper websocket server used as middleware in between SNIPS MQTT server and the client",
+  "description": "Relay websocket server used as middleware in between SNIPS MQTT server and the client",
   "main": "server.js",
   "scripts": {
     "start": "node server"
