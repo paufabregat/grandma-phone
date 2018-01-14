@@ -17,7 +17,7 @@ class CallContainer extends Component {
 
     componentDidMount() {
         navigator.mediaDevices.getUserMedia({
-            audio: true,
+            audio: false,
             video: true
         })
             .then(this.gotStream);
@@ -29,7 +29,7 @@ class CallContainer extends Component {
 
     onHangUp = () => {
         this.stream.getVideoTracks()[0].stop();
-        this.stream.getAudioTracks()[0].stop();
+        // this.stream.getAudioTracks()[0].stop();
         // eslint-disable-next-line
         setTimeout(() => this.props.history.push('/'), 1000);
     }
