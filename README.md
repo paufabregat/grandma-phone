@@ -13,11 +13,11 @@ Currently, the app is a POC to proof voice assisted communication with a web app
 
 Briefly there are main 3 components:
 - **Client**: User interface suited for senior needs. It is very visual and simple. Enables the user to pick a contact to call and set video and audio stream.
-- **Server**:  Relay server to allow websocket communication in between the voice assistant and the web app.
+- **Relay Server**:  Relay server to allow websocket communication in between the voice assistant and the web app. It relays payloads from one end to the other.
 - **Assistant**: Voice assistant created thanks to the awesome [SNIPS](http://snips.ai/) tech. The assistant receives commands that in turn are used by the web app to trigger actions and also receives commands to communicate with the user using Text-To-Speech (TTS)
 
 ## Setup
-Please, take a look at the [client](https://github.com/paufabregat/grandma-phone/tree/master/client), [server](https://github.com/paufabregat/grandma-phone/tree/master/server), and [assistant](https://github.com/paufabregat/grandma-phone/tree/master/assistant) folder to know how to setup the project. The recommended order is to start by the assistant, followed by the server and finish with the client.  
+Please, take a look at the [client](https://github.com/paufabregat/grandma-phone/tree/master/client), [relay server](https://github.com/paufabregat/grandma-phone/tree/master/relay-server), and [assistant](https://github.com/paufabregat/grandma-phone/tree/master/assistant) folder to know how to setup the project. The recommended order is to start by the assistant, followed by the server and finish with the client.  
 
 ## Road Map
 - Tests core functionalities
