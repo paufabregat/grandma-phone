@@ -32,5 +32,5 @@ For development purposes, the easiest is to run the websocket server locally on 
 
 Then run the server as follows:
 ~~~
-node server --piIp=your_Raspberry_Pi_IP
+node server --piIp=HOSTNAME_OR_IP
 ~~~
