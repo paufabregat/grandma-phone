@@ -16,7 +16,7 @@ git clone https://github.com/paufabregat/grandma-phone
 cd grandma-phone/server
 ~~~
 
-You will need the node version >= 6 to run the app. Next, install all the dependencies.
+You will need a node version >= 6 to run the app. Next, install all the dependencies.
 ~~~
 npm install
 ~~~
@@ -28,12 +28,7 @@ node server
 By default it tries to connect to the SNIPS MQTT server at `localhost`
 
 ### Connect to MQTT server running on Raspberry Pi
-For development purposes, the easiest is to run the websocket server locally on your laptop and read and publish from the SNIPS MQTT server running in the Raspberry Pi. Therefore we need to tell the server what is the IP of the Raspberry Pi in the local network.
-
-To do so, first log to your Raspberry Pi and get its IP address:
-~~~
-hostname -I
-~~~
+For development purposes, the easiest is to run the websocket server locally on your laptop and read and publish from the SNIPS MQTT server running in the Raspberry Pi. Therefore we need to tell the server what is the IP or hostname of the Raspberry Pi in the local network. For a freshly installed Pi with Raspbian the hostname is `raspberrypi.local`
 
 Then run the server as follows:
 ~~~
