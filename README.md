@@ -1,5 +1,5 @@
 # Grandma Phone
-Demo app to enable voice-assisted video calls for seniors.
+Front-end app to enable voice-assisted video calls for seniors.
 
 ## Motivation
 Technology has brought groundbreaking changes in the way human communicate. It is amazing that we can see friends and relatives from all over the world without leaving our living room. We get to our phones or laptops and set a video-call in a matter of seconds, allowing us to strengthen relationships even when we are physically far away from each other.
