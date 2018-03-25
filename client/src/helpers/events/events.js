@@ -4,13 +4,15 @@ import { intents } from '../constants';
 
 const socket = openSocket('http://localhost:8000');
 function callContact(cb) {
-    socket.on(intents.callContact, (event) => {
-        const eventParser = new EventParser(event);
-        const slots = eventParser.getSlots();
-        const sessionId = eventParser.getSessionId();
-        const contact = EventParser.getSlotValue(slots[0]);
-        return cb(null, contact, sessionId);
-    });
+    if (socket._callbacks[`$${intents.callContact}`] === undefined) {
+        socket.on(intents.callContact, (event) => {
+            const eventParser = new EventParser(event);
+            const slots = eventParser.getSlots();
+            const sessionId = eventParser.getSessionId();
+            const contact = EventParser.getSlotValue(slots[0]);
+            return cb(null, contact, sessionId);
+        });
+    }
 }
 
 function sendText(sessionId, text, event) {
