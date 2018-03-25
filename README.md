@@ -7,7 +7,7 @@ Technology has brought groundbreaking changes in the way human communicate. It i
 Technology is great but the access to technology, to the internet and, therefore, to knowledge, is creating a digital divide in our world. The ones having access to it have a substantial socioeconomic advantage from the ones who do not.
 IT companies processes on product design and development do not take into account the limitations of elders and people with disabilities and therefore their access to those products. Consequently, the access to knowledge and connectivity is full of obstacles. How could we lower the barrier to the access to technology and increase connectivity for the aforementioned groups?
 
-Grandma phone tries to answer the latter question, born from the need to communicate via video-call with non-tech-savvy seniors.
+Grandma Phone tries to answer the latter question, born from the need to communicate via video-call with non-tech-savvy seniors.
 
 You can learn more about [the reasons](https://medium.com/@paufabregat/elders-wellbeing-and-learning-by-doing-part-1-76f4019fe241) behind the development of Grandma Phone and [the design process](https://medium.com/@paufabregat/elders-wellbeing-and-learning-by-doing-part-2-f9fa7f21665b) in [Medium](https://medium.com/@paufabregat).
 
