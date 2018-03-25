@@ -33,4 +33,4 @@ Please, take a look at the [client](https://github.com/paufabregat/grandma-phone
 - Handle errors and problematic interactions
 
 ## License
-MIT
+[GNU GPLv3](https://github.com/paufabregat/grandma-phone/blob/master/LICENSE) 
