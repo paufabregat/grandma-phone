@@ -26,11 +26,25 @@ Stop calling for a contact or stop an ongoing call.
 
 First, you should setup your Raspberry Pi and the SNIPS platform running on it. Please, follow the instruction on the [SNIPS wiki](https://github.com/snipsco/snips-platform-documentation/wiki/1.-Setup-the-Snips-Voice-Platform) and come back here when ready for some more action! Also, once your Raspberry is running Raspbian Stretch and it is connected to your local network you can use [Sam](https://snipsco.github.io/sam/getting-started/introduction/): SNIPS CLI to manage voice assistants. It really makes your life easier to setup the SNIPS platform.
 
-The only step that has to be done manually and where Sam could not help (or at least by the time it was tried) is deploying a custom assistant. The Grandma Phone assistant is a custom one so in order to deploy it, please follow [these instructions](https://github.com/snipsco/snips-platform-documentation/wiki/2.-Create-an-assistant-using-an-existing-bundle#step-2-download-your-assistant).
+The only step that has to be done manually and where Sam could not help (or at least by the time it was tried) is deploying a custom assistant. The Grandma Phone assistant is a custom one so in order to deploy it, please follow the next steps:
+- SSH on your Raspberry Pi and create a file called `Snipsfile` with the following content:
+~~~
+assistant_url: https://s3.eu-west-3.amazonaws.com/assitants/grandma-phone-assistant.zip
+~~~
 
-You can download the zip file of the Grandma Phone assistance [here](https://s3.eu-west-3.amazonaws.com/assitants/grandma-phone-assistant.zip).
+- Run
+~~~
+(pi) $ sudo snipsmanager install
+~~~
 
-Ok at this point everything is working smoothly, right? Now run on your terminal
+- Reboot your Pi
+~~~
+(pi) $ sudo reboot
+~~~
+
+You should hear an awaking sound when the assistant is ready.
+
+Ok, at this point the assistant should be ready. Now run on your laptop terminal
 ~~~
 sam watch
 ~~~
